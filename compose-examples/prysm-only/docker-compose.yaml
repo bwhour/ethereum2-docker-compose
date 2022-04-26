@@ -79,7 +79,7 @@ services:
 
   prometheus:
     image: prom/prometheus:${PROMETHEUS_DOCKER_TAG}
-    user: "2000"
+    user: "1001"
     restart: on-failure
     hostname: prometheus
     command: --storage.tsdb.retention.time=31d --config.file=/etc/prometheus/prometheus.yml
@@ -94,7 +94,7 @@ services:
     image: grafana/grafana:${GRAFANA_DOCKER_TAG}
     restart: on-failure
     hostname: grafana
-    user: "2000"
+    user: "1001"
     depends_on:
       - stereum-init
       - prometheus
@@ -112,7 +112,7 @@ services:
 
   renderer:
     image: grafana/grafana-image-renderer:${GRAFANA_IMAGE_RENDERER_TAG}
-    user: "2000"
+    user: "1001"
     restart: on-failure
     hostname: renderer
     environment:
@@ -122,7 +122,7 @@ services:
 
   node-exporter:
     image: prom/node-exporter:${PROMETHEUS_NODE_EXPORTER_DOCKER_TAG}
-    user: "2000"
+    user: "1001"
     hostname: node-exporter
     <<: *logging
 

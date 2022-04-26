@@ -93,7 +93,7 @@ services:
   lighthouse_beacon:
     container_name: lighthouse_beacon
     image: stereum/lighthouse:${LIGHTHOUSE_DOCKER_TAG}
-    user: "2000"
+    user: "1001"
     depends_on:
       - stereum-init
     restart: unless-stopped
@@ -187,7 +187,7 @@ services:
     image: grafana/grafana:${GRAFANA_DOCKER_TAG}
     restart: unless-stopped
     hostname: grafana
-    user: "2000"
+    user: "1001"
     depends_on:
       - stereum-init
       - prometheus
@@ -207,7 +207,7 @@ services:
 
   renderer:
     image: grafana/grafana-image-renderer:${GRAFANA_IMAGE_RENDERER_TAG}
-    user: "2000"
+    user: "1001"
     restart: on-failure
     hostname: renderer
     environment:
@@ -219,7 +219,7 @@ services:
 
   node-exporter:
     image: prom/node-exporter:${PROMETHEUS_NODE_EXPORTER_DOCKER_TAG}
-    user: "2000"
+    user: "1001"
     hostname: node-exporter
     networks:
       - n_grafana_prometheus

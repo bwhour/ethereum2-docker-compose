@@ -10,10 +10,10 @@ services:
   validator-import-launchpad:
     container_name: validator-import-launchpad
     image: stereum/lodestar:${LODESTAR_DOCKER_TAG}
-    user: "2000"
+    user: "1001"
     depends_on:
       - stereum-init
-    command: account validator import --network pyrmont --directory /opt/app/validator_keys --keystoresDir /opt/app/keystores --secretsDir /opt/app/secrets
+    command: account validator import --network prater --directory /opt/app/validator_keys --keystoresDir /opt/app/keystores --secretsDir /opt/app/secrets
     volumes:
       - ./launchpad:/opt/app/validator_keys
       - ./data/lodestar/validator/keystores:/opt/app/keystores

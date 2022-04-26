@@ -8,7 +8,7 @@ services:
 
   exit-validator:
     image: stereum/lighthouse:${LIGHTHOUSE_DOCKER_TAG}
-    user: "2000"
+    user: "1001"
     depends_on:
       - stereum-init
     env_file: ./config/lighthouse/exit-validator.env

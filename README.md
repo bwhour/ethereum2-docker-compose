@@ -30,10 +30,10 @@ Not all setups are available for Mainnet yet.
 2. Copy the `docker-compose.yaml` of your choice to the project's root directory (this directory).
 3. Follow the guide included with the docker-compose (`README.md` of the selected docker-compose).
 
-### User id 2000
-Some components like grafana and nimbus need folders with special permission and/or owner. To make the setup of ethereum2-docker-compose as simple as possible these necessary permissions will be set on each startup with the user id of 2000.
+### User id 1001
+Some components like grafana and nimbus need folders with special permission and/or owner. To make the setup of ethereum2-docker-compose as simple as possible these necessary permissions will be set on each startup with the user id of 1001.
 
-It's possible (however highly unlikely) that your local system already has a user with the id of 2000. In this case the folders will show the name of your user. We recommend not using a local user with the id 2000 for security reasons.
+It's possible (however highly unlikely) that your local system already has a user with the id of 1001. In this case the folders will show the name of your user. We recommend not using a local user with the id 1001 for security reasons.
 
 ## FAQ
 ### My `docker-compose` command doesn't work (e. g. `ERROR: Version in "./docker-compose.yaml" is unsupported.`)

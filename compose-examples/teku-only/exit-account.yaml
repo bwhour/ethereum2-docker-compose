@@ -8,7 +8,7 @@ services:
 
   exit-validator:
     image: consensys/teku:${TEKU_DOCKER_TAG}
-    user: "2000"
+    user: "1001"
     depends_on:
       - stereum-init
     command: voluntary-exit --beacon-node-api-endpoint=http://beacon:5051 --validator-keys=/opt/app/launchpad/${KEY}.json:/opt/app/launchpad/${KEY}.txt

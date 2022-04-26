@@ -44,7 +44,7 @@ services:
       - stereum-init
       - geth
     command:
-      - --network=pyrmont
+      - --network=prater
       - --data-dir=/opt/app/beacon
       - --validators-dir=/opt/app/validators
       - --secrets-dir=/opt/app/secrets
@@ -74,7 +74,7 @@ services:
 
   prometheus:
     image: prom/prometheus:${PROMETHEUS_DOCKER_TAG}
-    user: "2000"
+    user: "1001"
     restart: on-failure
     hostname: prometheus
     depends_on:
@@ -91,7 +91,7 @@ services:
     image: grafana/grafana:${GRAFANA_DOCKER_TAG}
     restart: on-failure
     hostname: grafana
-    user: "2000"
+    user: "1001"
     depends_on:
       - stereum-init
       - prometheus
@@ -109,7 +109,7 @@ services:
 
   renderer:
     image: grafana/grafana-image-renderer:${GRAFANA_IMAGE_RENDERER_TAG}
-    user: "2000"
+    user: "1001"
     restart: on-failure
     hostname: renderer
     environment:
@@ -119,7 +119,7 @@ services:
 
   node-exporter:
     image: prom/node-exporter:${PROMETHEUS_NODE_EXPORTER_DOCKER_TAG}
-    user: "2000"
+    user: "1001"
     hostname: node-exporter
     <<: *logging
 
